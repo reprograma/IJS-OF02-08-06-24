@@ -2,9 +2,9 @@ const DIAS_UTEIS_NO_MES = 22;
 const HORAS_POR_DIA = 8;
 
 const MAX_HORAS_POR_PACOTE = {
-  pacote_basico: 50,
-  pacote_intermediario: 100,
-  pacote_premium: 200
+  pacote_basico: 51,
+  pacote_intermediario: 101,
+  pacote_premium: 201
 }
 
 const TAXAS_CONTRATUAIS_POR_PACOTE = {
