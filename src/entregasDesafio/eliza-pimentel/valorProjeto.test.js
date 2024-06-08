@@ -23,7 +23,33 @@ describe('pacote basico', () => {
         const esperado = 1056;
         expect(esperado).toBe(retornado);
     });
+});
+
+    describe('pacote intermediario', () => {
+        beforeAll(() => {
+            pacote.calcularPacote.mockReturnValue("pacote_intermediario")
+        })
+        test('calcular valor total do projeto quando 70 horas e 50 reais/hora', () => {
+            const valorHora = 50;
+            const funcionalidades = ["setup", "formulario", "responsividade", "otimizacao_seo", "integracao_mailchimp"];
+            const retornado = calcularValorTotalProjeto(funcionalidades, valorHora);
+            const esperado = 4032;
+            expect(esperado).toBe(retornado);
+        });
+    });
+
+    describe('pacote premium', () => {
+        beforeAll(() => {
+            pacote.calcularPacote.mockReturnValue("pacote_premium")
+        })
+        test('calcular valor total do projeto quando 150 horas e 100 reais/hora', () => {
+            const valorHora = 100;
+            const funcionalidades = ["setup", "formulario", "responsividade", "otimizacao_seo", "integracao_mailchimp", "construcao_1_pagina", "integracao_api_propria"];
+            const retornado = calcularValorTotalProjeto(funcionalidades, valorHora);
+            const esperado = 11040;
+            expect(esperado).toBe(retornado);
+        });
+    });
 
 
     
-})
