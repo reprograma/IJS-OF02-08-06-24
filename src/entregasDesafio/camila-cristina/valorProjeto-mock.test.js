@@ -37,27 +37,31 @@ describe('pacote basico', () => {
   
 })
 
-describe('pacote intermediario', () => {
-  test('calcular valor total do projeto quando 74 horas e 30 reais/hora', () => {
+describe('pacote intermediario mock', () => {
+  beforeEach(() => {
+    // para cada teste
+    pacote.calcularPacote.mockReturnValue('pacote_intermediario')
+  })
+
+  test('calcular valor total do projeto quando 64 horas e 30 reais/hora', () => {
     
-  
 
     const valorHora = 30;
-    const funcionalidades= [ 'formulario', 'responsividade', 'integracao_mailchimp', 'otimizacao_seo', 'setup']
+    const funcionalidades= ['formulario', 'responsividade', 'integracao_mailchimp', 'otimizacao_seo']
     const retornado = calcularValorTotalProjeto(funcionalidades, valorHora)
-    const esperado = 2419;
+    const esperado = 2150;
 
     expect(esperado).toBe(retornado)
   })
 })
 
-describe('pacote premium', () => {
+describe('pacote premium mock', () => {
   beforeEach(() => {
     // para cada teste
     pacote.calcularPacote.mockReturnValue('pacote_premium')
   })
 
-  test('calcular valor total do projeto quando 30 horas e 30 reais/hora', () => {
+  test('calcular valor total do projeto quando 104 horas e 30 reais/hora', () => {
     
     const valorHora = 30;
     const funcionalidades= [ 'formulario', 'responsividade', 'integracao_mailchimp', 'otimizacao_seo', 'integracao_api_propria', 'ssr', 'construcao_1_pagina', 'setup']
