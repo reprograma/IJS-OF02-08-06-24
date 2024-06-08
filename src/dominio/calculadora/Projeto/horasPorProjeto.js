@@ -1,9 +1,12 @@
-const { HORAS_POR_FUNCIONALIDADE } = require('../constantes/constantes');
+const { calcularHorasDeProjeto } = require('../../dominio/calculadora/Projeto/horasPorProjeto');
 
-const calcularHorasDeProjeto = (listaDeFuncionalidades) => (
-  listaDeFuncionalidades
-    .map(func => HORAS_POR_FUNCIONALIDADE[func])
-    .reduce((sum, currentValue) => sum + currentValue, 0)
-);
+describe('calcular Horas Por Projeto', () => {
 
-exports.calcularHorasDeProjeto = calcularHorasDeProjeto;
+    test('calcular horas por projeto - 1 funcionalidade', () => {
+        const listaDeFuncionalidades = ["formulario"];
+        const retorno = calcularHorasDeProjeto(listaDeFuncionalidades); // Corrigido o nome da função aqui
+        const esperado = 16;
+        expect(esperado).toBe(retorno);
+    });
+});
+
