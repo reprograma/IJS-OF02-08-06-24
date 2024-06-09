@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest .src/entregasDesafio/camila-cristina --watchAll "
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "jest": "^28.1.2"
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
